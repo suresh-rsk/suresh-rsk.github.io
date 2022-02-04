@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import Control from './Components/Control';
+import ListItem from './Components/ListItem';
+import {bindActionCreators} from 'redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { Actions } from './State';
+import { Store } from './State';
+
 
 function App() {
+
+  let todo=useSelector((state)=>state.List);
+  todo=[{heading:"adfwr",description:"erfwqrekl"}]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className="box">
+          <Control/>
+          {todo.map((i,k)=>{
+            <ListItem key={k} props={i}/>
+          })}
+      </div>
+      
     </div>
   );
 }

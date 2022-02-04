@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box  ;
+}
+.header{
+    display: block;
+    height: 50px;
+    z-index: 2;
+}
+.header h1{
+    margin-top: 0;
+    margin-left: 30px;
+}
+.header:hover{
+    border:2px black solid;
+}
+.box{
+    width: 60vw;
+    height: auto;
+    margin: 8% auto;
+}
+.nav{
+    height: 40px;
+    background-color: rgb(33, 80, 112);
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+#heading, #description{
+    border-radius: 10px;
+    background-color: rgb(112, 248, 248);
+    height:1.7rem;
+    width: 200px;
+}
+#add{
+    height: 1.7rem;
+    width:100px;
+    border-radius:10px;
+    background-color: rgb(7, 226, 255);
+}
+.list-item{
+    width:100%;
+    height: 100px;
+    background-color: rgb(199, 132, 132);
+}
