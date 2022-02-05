@@ -7,10 +7,11 @@ export const add=(props)=>{
     }
 }
 
-export const remove=()=>{
+export const remove=(props)=>{
     return (dispatch)=>{
         dispatch({
-            type:"remove"
+            type:"remove",
+            payload:props
         })
     }
 }

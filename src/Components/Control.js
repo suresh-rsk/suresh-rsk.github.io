@@ -33,12 +33,12 @@ const Control=()=>{
     return(
         <div className="nav">
             
-            <h3>Name</h3>       <input value={heading} 
+            <h3>Name</h3>       <input value={heading} maxLength={60}
                                 onChange={(e)=>{onChangeHandler(e)}}
                                 type="text"
                                 id="heading"
                                 name="heading"/>
-            <h3>Description</h3><input  value={description} 
+            <h3>Description</h3><input maxLength={150} value={description} 
                                 onChange={(e)=>{onChangeHandler(e)}}
                                 type="text" 
                                 id="description" 
