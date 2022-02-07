@@ -15,3 +15,13 @@ export const remove=(props)=>{
         })
     }
 }
+
+export const complete=(props)=>{
+    return (dispatch)=>{
+        dispatch({
+            type:"complete",
+            payload:props
+        })
+    }
+}
+

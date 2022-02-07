@@ -16,7 +16,7 @@
 .box{
     width: 60vw;
     height: auto;
-    margin: 8% auto;
+    margin: 4% auto;
 }
 .nav{
     height: 40px;
@@ -83,4 +83,7 @@
 }
 #delete{
     background-color: crimson;
+}
+.test{
+    background-color: rgb(9, 184, 3);
 }

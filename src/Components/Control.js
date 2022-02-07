@@ -1,41 +1,45 @@
 import './styles.css'
-import {useState} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import {bindActionCreators} from 'redux'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { Actions } from '../State/index'
 
 
-
 const Control=()=>{
+    const input=useRef(null);
+    useEffect(() => {
+        input.current.focus();
+      },[])
 
-    const todo=useSelector((state)=>state.List);
     const dispatch=useDispatch();
-    const {add, remove}=bindActionCreators(Actions,dispatch)
+    const {add}=bindActionCreators(Actions,dispatch)
 
 
     let [items, setItems] = useState({})
-    let {heading="", description=""}=items;
+    let {heading="", description="", style=""}=items;
+    style={background:"rgb(33, 80, 112)"}
+    
     
     const onChangeHandler=(e)=>{
         e.preventDefault();
         setItems({
-            ...items, [e.target.name]:e.target.value
+            ...items,style, [e.target.name]:e.target.value
         })
     }
 
     const onSubmitHandler=(e)=>{
         e.preventDefault();
         add(items)
-        setItems(heading="", description="")
+        setItems(heading="", description="",style={background:"rgb(33, 80, 112)"})
+        input.current.focus();
     }
 
-    
     return(
-        <div className="nav">
+        <div className="nav" >
             
-            <h3>Name</h3>       <input value={heading} maxLength={60}
+            <h3>Name</h3>       <input value={heading} maxLength={60}  ref={input}
                                 onChange={(e)=>{onChangeHandler(e)}}
-                                type="text"
+                                type="text" 
                                 id="heading"
                                 name="heading"/>
             <h3>Description</h3><input maxLength={150} value={description} 
@@ -44,6 +48,7 @@ const Control=()=>{
                                 id="description" 
                                 name="description"/>
             <button id="add" onClick={(e)=>{onSubmitHandler(e)}}>Add</button>
+            
         </div>
     )
 }

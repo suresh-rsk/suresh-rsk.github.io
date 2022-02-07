@@ -1,22 +1,20 @@
 
 let initialState=[];
 const ListReducer=(state=initialState, action)=>{
+
     switch(action.type){
         case "add":
-            // state.push(action.payload);
-            return [...state,action.payload];
-        case "remove":{
-            let i=state.length;
-            console.log(i, typeof(state))
-            for(i;i>0;i--){
-                console.log(state[i-1], action.payload, state);
-                if(state[i-1].heading==action.payload)
-                    delete state[i-1]
+            return [action.payload,...state];
+        case "remove":
+            return state.filter(value=>value.heading!==action.payload)
+        case "complete":
+            {
+                let copy=state.slice()
+                let filtered=copy.filter(value=>value.heading===action.payload)[0]
+                filtered.style={background:"rgb(9, 184, 3)"}
+                copy.push(...copy.splice(copy.indexOf(filtered),1))
+                return copy
             }
-            console.log(state);
-
-            return state
-        }
 
         default:
             return state;
