@@ -2,13 +2,14 @@ import './App.css';
 import Header from './Components/Header';
 import Control from './Components/Control';
 import ListItem from './Components/ListItem';
-import {useDispatch, useSelector} from 'react-redux';
-import { Actions } from './State';
-import {bindActionCreators} from 'redux'
+import {useSelector} from 'react-redux'
+// import {useDispatch, useSelector} from 'react-redux';
+// import { Actions } from './State';
+// import {bindActionCreators} from 'redux'
 
 function App() {
 
-  let Dispatch=useDispatch();
+  // let Dispatch=useDispatch();
   // const {add}=bindActionCreators(Actions,Dispatch)
   let todo=useSelector((state)=>state.List);
 
