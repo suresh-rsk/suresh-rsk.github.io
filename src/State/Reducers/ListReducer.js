@@ -5,8 +5,10 @@ const ListReducer=(state=initialState, action)=>{
     switch(action.type){
         case "add":
             return [action.payload,...state];
-        case "remove":
+        case "remove":{
+            if(localStorage.length===1){localStorage.removeItem('data')}
             return state.filter(value=>value.heading!==action.payload)
+        }
         case "complete":
             {
                 let copy=state.slice()

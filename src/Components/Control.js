@@ -35,9 +35,9 @@ const Control=()=>{
     }
 
     return(
-        <div className="nav" >
-            
-            <h3>Name</h3>       <input value={heading} maxLength={60}  ref={input}
+        <div >
+            <form className="nav" >
+            <h3>Name</h3>       <input value={heading} maxLength={60}  ref={input} required
                                 onChange={(e)=>{onChangeHandler(e)}}
                                 type="text" 
                                 id="heading"
@@ -48,7 +48,7 @@ const Control=()=>{
                                 id="description" 
                                 name="description"/>
             <button id="add" onClick={(e)=>{onSubmitHandler(e)}}>Add</button>
-            
+            </form>
         </div>
     )
 }
