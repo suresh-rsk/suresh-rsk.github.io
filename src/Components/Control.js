@@ -28,10 +28,12 @@ const Control=()=>{
     }
 
     const onSubmitHandler=(e)=>{
-        e.preventDefault();
-        add(items)
-        setItems(heading="", description="",style={background:"rgb(33, 80, 112)"})
-        input.current.focus();
+        if(heading){
+            e.preventDefault();
+            add(items)
+            setItems(heading="", description="",style={background:"rgb(33, 80, 112)"})
+            input.current.focus();
+        }
     }
 
     return(
