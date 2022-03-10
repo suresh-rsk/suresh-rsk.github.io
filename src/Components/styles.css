@@ -14,30 +14,44 @@
 .header:hover{
     border:2px black solid;
 }
-.box{
-    width: 60vw;
-    height: auto;
-    margin: 4% auto;
-}
 .nav{
+    width: 70%;
     height: 40px;
+    margin: 5% auto;
+
+    align-items: center;
     background-color: rgb(33, 80, 112);
     display: flex;
-    align-items: center;
-    justify-content:space-evenly;
     color: white;
     font-size: 1rem;
     border-radius: 10px;
+}
+.nav1{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin: 5% auto;
+    justify-content:space-evenly;
+}
+
+#heading, #description, #add, h3{
+    margin-left: 10px;
+
+}
+.nav1 h3{
+    display: block;
+    width: auto;
 }
 #heading, #description{
     border-radius: 10px;
     background-color: rgb(112, 248, 248);
     height:1.7rem;
-    width: 25%;
+    width: 90%;
 }
 #add{
     height: 1.7rem;
-    width:100px;
+    margin-right: 20px;
+    width:80px;
     border-radius:10px;
     background-color: rgb(7, 226, 255);
 }
@@ -45,7 +59,8 @@
 .list-item{
     display: flex;
     margin-top: 10px;
-    width:100%;
+    margin-left: 15%;
+    width:70%;
     height: 100px;
     background-color: rgb(33, 80, 112);
     border-radius: 10px;
@@ -62,6 +77,9 @@
     margin-left: 20px;
     margin-bottom: 0;
 
+}
+.nav1 h3{
+    width: 40%;
 }
 .content{
     width: 86%;
@@ -87,4 +105,21 @@
 }
 .test{
     background-color: rgb(9, 184, 3);
+}
+
+@media screen and (max-width:935px) {
+    .nav{
+        display: block;
+        height: 120px;
+    }
+    .nav1{
+        width:80%;
+        height: 40px;
+        margin: 0 auto;
+    }
+    
+    #add{
+        display: block;
+        margin: 5px auto;
+    }
 }
